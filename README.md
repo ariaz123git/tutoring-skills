@@ -1,6 +1,6 @@
 # tutoring-skills
 
-Seven Agent Skills for Claude Code (and Codex) that build and check tutoring materials: a course
+Seven Agent Skills for Claude Code that build and check tutoring materials: a course
 syllabus, interactive HTML lessons, homework with staged hints, diagrams and animations, and a
 verification pass before anything reaches a student.
 
@@ -9,7 +9,7 @@ make the lessons and homework I teach from.
 
 ## Who it's for
 
-Tutors and teachers who use Claude Code or Codex and want generated lessons and homework to be
+Tutors and teachers who use Claude Code and want generated lessons and homework to be
 checked before a student sees them. The worked examples and research notes lean toward
 high-school and first-year physics and math; the workflow itself is not physics-specific.
 
@@ -77,20 +77,13 @@ cp -r tutoring-skills/skills/* ~/.claude/skills/
 Copy all seven folders together. Several skills point to each other's reference files with
 relative paths (for example `../verify-material/references/rendering-and-proofing.md`).
 
-### Codex
-
-Each skill is a standard `SKILL.md` folder, so the same folders work in Codex. Copy the contents
-of `skills/` into `~/.agents/skills/` (all projects) or `.agents/skills/` in a repository.
-`verify-light` includes `agents/openai.yaml` with its display name and default prompt for the
-Codex interface.
-
-The two verify skills name Claude models for their reviewers. `verify-light` is written to stop
-and tell you if a Sonnet reviewer is not available, rather than substitute another model.
-
 ### Tools the skills expect
 
 Python 3 for number checks, Node.js for `node --check` and jsdom tests, and Chrome or Edge for
 headless rendering. WeasyPrint is optional, for PDF output.
+
+The two verify skills use Claude models as reviewers. `verify-light` is written to stop and tell
+you if a Sonnet reviewer is not available, rather than substitute another model.
 
 ## Example output
 
