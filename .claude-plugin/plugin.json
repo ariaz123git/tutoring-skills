@@ -1,0 +1,11 @@
+{
+  "name": "tutoring-skills",
+  "description": "Skills for building and verifying tutoring materials: syllabi, interactive HTML lessons, homework with staged hints, diagrams, animations, and a pre-send verification pass.",
+  "author": {
+    "name": "Ariaz Askarkani"
+  },
+  "homepage": "https://github.com/ariaz123git/tutoring-skills",
+  "repository": "https://github.com/ariaz123git/tutoring-skills",
+  "license": "MIT",
+  "keywords": ["tutoring", "teaching", "education", "lessons", "homework", "physics", "verification"]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "tutoring-skills",
+  "description": "Marketplace for the tutoring-skills plugin.",
+  "owner": {
+    "name": "Ariaz Askarkani"
+  },
+  "plugins": [
+    {
+      "name": "tutoring-skills",
+      "source": ".",
+      "description": "Skills for building and verifying tutoring materials: syllabi, interactive HTML lessons, homework with staged hints, diagrams, animations, and a pre-send verification pass."
+    }
+  ]
+}
