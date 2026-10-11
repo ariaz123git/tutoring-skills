@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify Light"
+  short_description: "One-pass Sonnet review for student materials"
+  default_prompt: "Use $verify-light to check this homework before I send it to the student."
