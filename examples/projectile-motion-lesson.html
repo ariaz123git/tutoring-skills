@@ -12,6 +12,7 @@
     --purple:#6a4fd0;--purple-soft:#eee9fb;
   }
   *{box-sizing:border-box;}
+  sub{line-height:0;}
   body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--ink);background:#e9edf4;margin:0;line-height:1.55;}
   .page{max-width:900px;margin:24px auto;background:var(--bg);padding:38px 42px 48px;box-shadow:0 6px 30px rgba(20,30,60,.12);border-radius:12px;}
   header.top{border-bottom:3px solid var(--ink);padding-bottom:16px;margin-bottom:8px;}
@@ -82,6 +83,7 @@
   .readout{display:flex;flex-wrap:wrap;gap:10px;padding:12px 16px;border-top:1px solid var(--line);background:var(--soft);}
   .stat{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-width:104px;}
   .stat .t{font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);}
+  .stat .t .mono{text-transform:none;letter-spacing:0;}
   .stat .n{font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;}
   .stat.x .n{color:var(--blue);} .stat.y .n{color:var(--green);} .stat.tt .n{color:var(--orange);}
   .cap{font-size:12.5px;color:var(--muted);padding:2px 4px 0;margin-top:8px;}
@@ -110,14 +112,14 @@
   <div class="bigidea">
     <h3>The one idea everything hangs off</h3>
     <b>Horizontal and vertical motion are independent — time is the only thing they share.</b><br>
-    Horizontal: no force, so velocity is constant → <span class="mono">x = vₓ·t</span> &nbsp;(aₓ = 0).<br>
-    Vertical: gravity only, so it accelerates → use the kinematic equations with <span class="mono">a_y = −9.8 m/s²</span>.<br>
+    Horizontal: no force, so velocity is constant → <span class="mono">x = v<sub>x</sub>·t</span> &nbsp;(a<sub>x</sub> = 0).<br>
+    Vertical: gravity only, so it accelerates → use the kinematic equations with <span class="mono">a<sub>y</sub> = −9.8 m/s²</span>.<br>
     You solve the two axes <i>separately</i> and connect them through the shared time <span class="mono">t</span>.
   </div>
 
   <!-- ===================== BEAT 1: INDEPENDENCE ===================== -->
   <section class="beat">
-    <div class="bhd"><span class="num">1</span><h2>Drop vs. shoot — the independence of x and y</h2><span class="eq">aₓ = 0,&nbsp; a_y = −g</span></div>
+    <div class="bhd"><span class="num">1</span><h2>Drop vs. shoot — the independence of x and y</h2><span class="eq">a<sub>x</sub> = 0,&nbsp; a<sub>y</sub> = −g</span></div>
     <div class="bbody">
       <p>Two balls leave a table at the same instant: one is simply <b>dropped</b>, the other is <b>launched horizontally</b>. Which lands first?</p>
       <div class="lbl ask"><span class="ic"></span>Ask first</div>
@@ -145,7 +147,7 @@
 
   <!-- ===================== BEAT 2: FOUNDATIONS ===================== -->
   <section class="beat">
-    <div class="bhd"><span class="num">2</span><h2>Setting up — components &amp; the two-column table</h2><span class="eq">vₓ = v cosθ,&nbsp; v_y = v sinθ</span></div>
+    <div class="bhd"><span class="num">2</span><h2>Setting up — components &amp; the two-column table</h2><span class="eq">v<sub>x</sub> = v cosθ,&nbsp; v<sub>y</sub> = v sinθ</span></div>
     <div class="bbody">
       <p>Before any projectile problem, split the launch velocity into its parts and make two columns — one for x, one for y. <b>Pick "up = +" and write it down before you touch a number.</b> (Sign slips are the single biggest point-loser here.)</p>
       <div class="kineq">
@@ -157,20 +159,20 @@
           <li>v<sup>2</sup> = v<sub>0</sub><sup>2</sup> + 2 a Δx</li>
           <li>Δx = v t − ½ a t<sup>2</sup></li>
         </ol>
-        <div class="kn">You already know these — projectile motion just runs them <b>per axis</b>. On x, a = 0, so everything collapses to <span class="mono">x = vₓ t</span>. On y, a = −9.8, so the full set is in play. Each equation is "missing" one variable — pick the one that skips the quantity you don't have.</div>
+        <div class="kn">You already know these — projectile motion just runs them <b>per axis</b>. On x, a = 0, so everything collapses to <span class="mono">x = v<sub>x</sub> t</span>. On y, a = −9.8, so the full set is in play. Each equation is "missing" one variable — pick the one that skips the quantity you don't have.</div>
       </div>
       <div class="lbl ask"><span class="ic"></span>Ask first</div>
       <ul class="q">
-        <li>For a launch speed <span class="mono">v</span> at angle <span class="mono">θ</span> above the horizontal, what are <span class="mono">vₓ</span> and <span class="mono">v_y</span>?</li>
-        <li>Which of the four kinematic equations apply on the <i>x</i> side, given aₓ = 0?</li>
-        <li>What is <span class="mono">a_y</span>, with sign, if up is positive?</li>
+        <li>For a launch speed <span class="mono">v</span> at angle <span class="mono">θ</span> above the horizontal, what are <span class="mono">v<sub>x</sub></span> and <span class="mono">v<sub>y</sub></span>?</li>
+        <li>Which of the four kinematic equations apply on the <i>x</i> side, given a<sub>x</sub> = 0?</li>
+        <li>What is <span class="mono">a<sub>y</sub></span>, with sign, if up is positive?</li>
       </ul>
       <details><summary>Reveal the setup</summary>
         <div class="rev">
-          <p><b>Components:</b> <span class="eqn">vₓ = v cosθ</span> &nbsp; <span class="eqn">v_y = v sinθ</span>.</p>
-          <p><b>x-column (aₓ = 0):</b> start from equation&nbsp;5, <span class="eqn">Δx = v t − ½ aₓ t²</span>; since <span class="mono">aₓ = 0</span> the <span class="mono">½ aₓ t²</span> term is zero, leaving <span class="eqn">x = vₓ t</span>. Horizontal velocity never changes.</p>
-          <p><b>y-column (a_y = −9.8):</b> the full kit — <span class="eqn">v_y = v_y0 + a_y t</span>, &nbsp;<span class="eqn">y = v_y0 t + ½ a_y t²</span>, &nbsp;<span class="eqn">v_y² = v_y0² + 2 a_y Δy</span>.</p>
-          <p><b>The bridge:</b> solve the y-column for the time <span class="mono">t</span>, then drop that <i>same</i> t into <span class="mono">x = vₓ t</span>.</p>
+          <p><b>Components:</b> <span class="eqn">v<sub>x</sub> = v cosθ</span> &nbsp; <span class="eqn">v<sub>y</sub> = v sinθ</span>.</p>
+          <p><b>x-column (a<sub>x</sub> = 0):</b> start from equation&nbsp;5, <span class="eqn">Δx = v t − ½ a<sub>x</sub> t²</span>; since <span class="mono">a<sub>x</sub> = 0</span> the <span class="mono">½ a<sub>x</sub> t²</span> term is zero, leaving <span class="eqn">x = v<sub>x</sub> t</span>. Horizontal velocity never changes.</p>
+          <p><b>y-column (a<sub>y</sub> = −9.8):</b> the full kit — <span class="eqn">v<sub>y</sub> = v<sub>y0</sub> + a<sub>y</sub> t</span>, &nbsp;<span class="eqn">y = v<sub>y0</sub> t + ½ a<sub>y</sub> t²</span>, &nbsp;<span class="eqn">v<sub>y</sub>² = v<sub>y0</sub>² + 2 a<sub>y</sub> Δy</span>.</p>
+          <p><b>The bridge:</b> solve the y-column for the time <span class="mono">t</span>, then drop that <i>same</i> t into <span class="mono">x = v<sub>x</sub> t</span>.</p>
         </div>
       </details>
     </div>
@@ -183,7 +185,7 @@
       <p>Almost every problem shares similarities to these types of problems — get familiar with these and the patterns transfer to the majority of projectile problems. You'll pick it up as you keep practicing.</p>
       <table class="types">
         <tr><th>Type</th><th>Picture</th><th>Launch velocity</th></tr>
-        <tr><td class="t1"><b>1 · Horizontal launch from a height</b></td><td>ball rolls off a table</td><td>purely horizontal; <span class="mono">v_y0 = 0</span></td></tr>
+        <tr><td class="t1"><b>1 · Horizontal launch from a height</b></td><td>ball rolls off a table</td><td>purely horizontal; <span class="mono">v<sub>y0</sub> = 0</span></td></tr>
         <tr><td class="t2"><b>2 · Angle launch, level ground</b></td><td>kicked soccer ball</td><td>at angle θ; lands at same height</td></tr>
         <tr><td class="t3"><b>3 · Launch from an elevated point</b></td><td>thrown off a cliff</td><td>angle (or horizontal) + extra drop</td></tr>
       </table>
@@ -192,7 +194,7 @@
 
   <!-- ===================== BEAT 4: TYPE 1 ===================== -->
   <section class="beat">
-    <div class="bhd"><span class="num">4</span><h2>Type 1 — horizontal launch from a height</h2><span class="eq">v_y0 = 0</span></div>
+    <div class="bhd"><span class="num">4</span><h2>Type 1 — horizontal launch from a height</h2><span class="eq">v<sub>y0</sub> = 0</span></div>
     <div class="bbody">
       <div class="prob"><b>Example 1.</b> A ball rolls off a <b>1.5 m</b> table at <b>3.0 m/s</b>. Find (a) the time to land, (b) how far from the table it lands, and (c) its velocity (speed and angle) at landing.</div>
       <div class="lbl ask"><span class="ic"></span>Ask first</div>
@@ -206,14 +208,14 @@
           <div class="setup">
             <div class="sh">Step 1 — draw it &amp; label what you know</div>
             <div class="fig"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,Arial,sans-serif" style="width:100%;height:auto;max-width:340px"><line x1="30" y1="150" x2="330" y2="150" stroke="#1a2238" stroke-width="2"/><line x1="33" y1="150" x2="27" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="41" y1="150" x2="35" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="49" y1="150" x2="43" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="57" y1="150" x2="51" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="65" y1="150" x2="59" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="73" y1="150" x2="67" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="81" y1="150" x2="75" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="89" y1="150" x2="83" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="97" y1="150" x2="91" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="105" y1="150" x2="99" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="113" y1="150" x2="107" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="121" y1="150" x2="115" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="129" y1="150" x2="123" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="137" y1="150" x2="131" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="145" y1="150" x2="139" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="153" y1="150" x2="147" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="161" y1="150" x2="155" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="169" y1="150" x2="163" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="177" y1="150" x2="171" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="185" y1="150" x2="179" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="193" y1="150" x2="187" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="201" y1="150" x2="195" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="209" y1="150" x2="203" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="217" y1="150" x2="211" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="225" y1="150" x2="219" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="233" y1="150" x2="227" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="241" y1="150" x2="235" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="249" y1="150" x2="243" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="257" y1="150" x2="251" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="265" y1="150" x2="259" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="273" y1="150" x2="267" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="281" y1="150" x2="275" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="289" y1="150" x2="283" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="297" y1="150" x2="291" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="305" y1="150" x2="299" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="313" y1="150" x2="307" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="321" y1="150" x2="315" y2="157" stroke="#b9c2d4" stroke-width="1"/><line x1="329" y1="150" x2="323" y2="157" stroke="#b9c2d4" stroke-width="1"/><rect x="58" y="66" width="26" height="84" fill="#e3e9f4" stroke="#c4ccd9"/><circle cx="90" cy="66" r="5" fill="#d8443c"/><line x1="90" y1="66" x2="134" y2="66" stroke="#2f6fed" stroke-width="2.5"/><polygon points="134,66 126.6,69.1 126.6,62.9" fill="#2f6fed"/><text x="137" y="62" font-size="11.5" fill="#2f6fed" text-anchor="start" font-weight="700">v = 3.0 m/s</text><line x1="46" y1="66" x2="46" y2="150" stroke="#5b6478" stroke-width="1.2"/><polygon points="46,150 43.7,144.5 48.3,144.5" fill="#5b6478"/><line x1="46" y1="150" x2="46" y2="66" stroke="#5b6478" stroke-width="1.2"/><polygon points="46,66 48.3,71.5 43.7,71.5" fill="#5b6478"/><text x="40" y="112" font-size="10.5" fill="#5b6478" text-anchor="end" font-weight="400">1.5 m</text><line x1="90" y1="166" x2="262" y2="166" stroke="#e8842c" stroke-width="1.5"/><polygon points="90,166 96.5,163.6 96.5,168.4" fill="#e8842c"/><polygon points="262,166 255.5,163.6 255.5,168.4" fill="#e8842c"/><text x="176.0" y="162" font-size="11" fill="#e8842c" text-anchor="middle" font-weight="700">x = ?</text><line x1="312" y1="140" x2="334" y2="140" stroke="#8b93a5" stroke-width="1.5"/><polygon points="334,140 328.5,142.3 328.5,137.7" fill="#8b93a5"/><text x="337" y="144" font-size="10" fill="#8b93a5" text-anchor="start" font-weight="400">x</text><line x1="312" y1="140" x2="312" y2="118" stroke="#8b93a5" stroke-width="1.5"/><polygon points="312,118 314.3,123.5 309.7,123.5" fill="#8b93a5"/><text x="309" y="115" font-size="10" fill="#8b93a5" text-anchor="end" font-weight="400">y</text></svg></div>
-            <div class="sc"><b>The picture first.</b> A 1.5&nbsp;m table; the ball leaves <i>flat</i> at 3.0&nbsp;m/s, so <span class="mono">v_y0 = 0</span>. Up = +: the drop is <span class="mono">Δy = −1.5 m</span>, and <span class="mono">x</span> along the ground is what we want.</div>
+            <div class="sc"><b>The picture first.</b> A 1.5&nbsp;m table; the ball leaves <i>flat</i> at 3.0&nbsp;m/s, so <span class="mono">v<sub>y0</sub> = 0</span>. Up = +: the drop is <span class="mono">Δy = −1.5 m</span>, and <span class="mono">x</span> along the ground is what we want.</div>
           </div>
-          <p><b>(a) Time</b> — use the y-column with <span class="mono">v_y0 = 0</span>, up = +, so the drop is <span class="mono">Δy = −1.5 m</span>:</p>
-          <p><span class="eqn">Δy = ½ a_y t² → −1.5 = ½(−9.8)t² → t = √(2·1.5 / 9.8)</span></p>
+          <p><b>(a) Time</b> — use the y-column with <span class="mono">v<sub>y0</sub> = 0</span>, up = +, so the drop is <span class="mono">Δy = −1.5 m</span>:</p>
+          <p><span class="eqn">Δy = ½ a<sub>y</sub> t² → −1.5 = ½(−9.8)t² → t = √(2·1.5 / 9.8)</span></p>
           <p><span class="final">t ≈ 0.553 s</span></p>
           <p><b>(b) Range</b> — same time into the x-column:</p>
-          <p><span class="eqn">x = vₓ t = 3.0 × 0.553</span> → <span class="final">x ≈ 1.66 m</span></p>
-          <p><b>(c) Landing velocity</b> — recombine the components. <span class="mono">vₓ = 3.0</span> (unchanged); <span class="mono">v_y = a_y t = 9.8 × 0.553 ≈ 5.42 m/s</span> downward:</p>
+          <p><span class="eqn">x = v<sub>x</sub> t = 3.0 × 0.553</span> → <span class="final">x ≈ 1.66 m</span></p>
+          <p><b>(c) Landing velocity</b> — recombine the components. <span class="mono">v<sub>x</sub> = 3.0</span> (unchanged); <span class="mono">v<sub>y</sub> = a<sub>y</sub> t = 9.8 × 0.553 ≈ 5.42 m/s</span> downward:</p>
           <p><span class="eqn">v = √(3.0² + 5.42²) ≈ 6.20 m/s</span>, &nbsp; <span class="eqn">angle = tan⁻¹(5.42 / 3.0) ≈ 61° below horizontal</span></p>
           <p><span class="final">v ≈ 6.2 m/s, 61° below horizontal &nbsp;<b>[Forward 61° Downward]</b></span></p>
         </div>
@@ -240,12 +242,12 @@
             <div class="fig"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,Arial,sans-serif" style="width:100%;height:auto;max-width:340px"><line x1="30" y1="155" x2="330" y2="155" stroke="#1a2238" stroke-width="2"/><line x1="33" y1="155" x2="27" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="41" y1="155" x2="35" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="49" y1="155" x2="43" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="57" y1="155" x2="51" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="65" y1="155" x2="59" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="73" y1="155" x2="67" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="81" y1="155" x2="75" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="89" y1="155" x2="83" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="97" y1="155" x2="91" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="105" y1="155" x2="99" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="113" y1="155" x2="107" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="121" y1="155" x2="115" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="129" y1="155" x2="123" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="137" y1="155" x2="131" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="145" y1="155" x2="139" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="153" y1="155" x2="147" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="161" y1="155" x2="155" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="169" y1="155" x2="163" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="177" y1="155" x2="171" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="185" y1="155" x2="179" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="193" y1="155" x2="187" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="201" y1="155" x2="195" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="209" y1="155" x2="203" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="217" y1="155" x2="211" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="225" y1="155" x2="219" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="233" y1="155" x2="227" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="241" y1="155" x2="235" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="249" y1="155" x2="243" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="257" y1="155" x2="251" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="265" y1="155" x2="259" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="273" y1="155" x2="267" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="281" y1="155" x2="275" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="289" y1="155" x2="283" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="297" y1="155" x2="291" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="305" y1="155" x2="299" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="313" y1="155" x2="307" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="321" y1="155" x2="315" y2="162" stroke="#b9c2d4" stroke-width="1"/><line x1="329" y1="155" x2="323" y2="162" stroke="#b9c2d4" stroke-width="1"/><circle cx="46" cy="155" r="5" fill="#d8443c"/><line x1="46" y1="155" x2="103.15767664977295" y2="122" stroke="#1f9d6b" stroke-width="2.5"/><polygon points="103.15767664977295,122 98.3,128.4 95.2,123.0" fill="#1f9d6b"/><text x="106.15767664977295" y="118" font-size="11.5" fill="#1f9d6b" text-anchor="start" font-weight="700">v = 20 m/s</text><path d="M 68 155 A 22 22 0 0 0 65.1 144.0" fill="none" stroke="#5b6478" stroke-width="1.2"/><text x="77.87555226753926" y="150.45897151161682" font-size="10.5" fill="#5b6478" text-anchor="middle" font-weight="400">30&#176;</text><line x1="46" y1="171" x2="300" y2="171" stroke="#e8842c" stroke-width="1.5"/><polygon points="46,171 52.5,168.6 52.5,173.4" fill="#e8842c"/><polygon points="300,171 293.5,168.6 293.5,173.4" fill="#e8842c"/><text x="173.0" y="167" font-size="11" fill="#e8842c" text-anchor="middle" font-weight="700">range = ?</text><text x="120" y="92" font-size="11" fill="#e8842c" text-anchor="start" font-weight="700">Δy = ?</text><line x1="312" y1="147" x2="334" y2="147" stroke="#8b93a5" stroke-width="1.5"/><polygon points="334,147 328.5,149.3 328.5,144.7" fill="#8b93a5"/><text x="337" y="151" font-size="10" fill="#8b93a5" text-anchor="start" font-weight="400">x</text><line x1="312" y1="147" x2="312" y2="125" stroke="#8b93a5" stroke-width="1.5"/><polygon points="312,125 314.3,130.5 309.7,130.5" fill="#8b93a5"/><text x="309" y="122" font-size="10" fill="#8b93a5" text-anchor="end" font-weight="400">y</text></svg></div>
             <div class="sc"><b>The picture first.</b> Level ground; 20&nbsp;m/s at 30° (the arc marks the angle). A symmetric arch — up to a peak of height <span class="mono">Δy</span>, then back to the same level a distance <span class="mono">range</span> away. Up = +.</div>
           </div>
-          <p><b>Components:</b> <span class="mono">vₓ = 20 cos30 ≈ 17.32</span>, &nbsp;<span class="mono">v_y0 = 20 sin30 = 10.0 m/s</span>.</p>
-          <p><b>(a) Max height</b> — at the top <span class="mono">v_y = 0</span>, so <span class="eqn">v_y² = v_y0² + 2a_y Δy → 0 = 10² + 2(−9.8)Δy</span>:</p>
+          <p><b>Components:</b> <span class="mono">v<sub>x</sub> = 20 cos30 ≈ 17.32</span>, &nbsp;<span class="mono">v<sub>y0</sub> = 20 sin30 = 10.0 m/s</span>.</p>
+          <p><b>(a) Max height</b> — at the top <span class="mono">v<sub>y</sub> = 0</span>, so <span class="eqn">v<sub>y</sub>² = v<sub>y0</sub>² + 2a<sub>y</sub> Δy → 0 = 10² + 2(−9.8)Δy</span>:</p>
           <p><span class="final">Δy = 100 / 19.6 ≈ 5.10 m</span></p>
-          <p><b>(b) Total time</b> — by symmetry, up-time = down-time, and <span class="mono">v_y = 0</span> at the peak: <span class="eqn">t_up = v_y0/g = 10/9.8 ≈ 1.02 s → T = 2 t_up</span>:</p>
+          <p><b>(b) Total time</b> — by symmetry, up-time = down-time, and <span class="mono">v<sub>y</sub> = 0</span> at the peak: <span class="eqn">t<sub>up</sub> = v<sub>y0</sub>/g = 10/9.8 ≈ 1.02 s → T = 2 t<sub>up</sub></span>:</p>
           <p><span class="final">T ≈ 2.04 s</span></p>
-          <p><b>(c) Range</b> — put the flight time into the x-column: <span class="eqn">R = vₓ T = 17.32 × 2.04</span>:</p>
+          <p><b>(c) Range</b> — put the flight time into the x-column: <span class="eqn">R = v<sub>x</sub> T = 17.32 × 2.04</span>:</p>
           <p><span class="final">R ≈ 35.3 m</span></p>
         </div>
       </details>
@@ -256,7 +258,7 @@
   <section class="beat">
     <div class="bhd"><span class="num">6</span><h2>Type 3 — launch from a cliff</h2><span class="eq">quadratic in t</span></div>
     <div class="bbody">
-      <p><b>Connection —</b> The method below is exactly the <b>one-phase "launch from a height"</b> trick from 1D kinematics: one quadratic in t covers the whole up-and-down flight. In 2D it's just the <b>vertical column</b> — the horizontal column shares the time, into the formula <span class="mono">x = vₓ t</span>.</p>
+      <p><b>Connection —</b> The method below is exactly the <b>one-phase "launch from a height"</b> trick from 1D kinematics: one quadratic in t covers the whole up-and-down flight. In 2D it's just the <b>vertical column</b> — the horizontal column shares the time, into the formula <span class="mono">x = v<sub>x</sub> t</span>.</p>
       <div class="prob"><b>Example 3.</b> A ball is thrown at <b>15 m/s</b>, <b>40°</b> above the horizontal, from the top of a <b>25 m</b> cliff. Find (a) the time in the air and (b) how far from the base of the cliff it lands.</div>
       <div class="lbl ask"><span class="ic"></span>Ask first</div>
       <ul class="q">
@@ -271,13 +273,13 @@
             <div class="fig"><svg viewBox="0 0 346 196" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,Arial,sans-serif" style="width:100%;height:auto;max-width:346px"><line x1="88" y1="170" x2="336" y2="170" stroke="#1a2238" stroke-width="2"/><line x1="91" y1="170" x2="85" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="99" y1="170" x2="93" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="107" y1="170" x2="101" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="115" y1="170" x2="109" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="123" y1="170" x2="117" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="131" y1="170" x2="125" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="139" y1="170" x2="133" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="147" y1="170" x2="141" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="155" y1="170" x2="149" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="163" y1="170" x2="157" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="171" y1="170" x2="165" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="179" y1="170" x2="173" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="187" y1="170" x2="181" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="195" y1="170" x2="189" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="203" y1="170" x2="197" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="211" y1="170" x2="205" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="219" y1="170" x2="213" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="227" y1="170" x2="221" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="235" y1="170" x2="229" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="243" y1="170" x2="237" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="251" y1="170" x2="245" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="259" y1="170" x2="253" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="267" y1="170" x2="261" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="275" y1="170" x2="269" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="283" y1="170" x2="277" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="291" y1="170" x2="285" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="299" y1="170" x2="293" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="307" y1="170" x2="301" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="315" y1="170" x2="309" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="323" y1="170" x2="317" y2="177" stroke="#b9c2d4" stroke-width="1"/><line x1="331" y1="170" x2="325" y2="177" stroke="#b9c2d4" stroke-width="1"/><rect x="58" y="78" width="30" height="92" fill="#e3e9f4" stroke="#c4ccd9"/><circle cx="94" cy="78" r="5" fill="#d8443c"/><line x1="94" y1="78" x2="135.3663999284248" y2="43.28946907692688" stroke="#1f9d6b" stroke-width="2.5"/><polygon points="135.3663999284248,43.28946907692688 131.7,50.4 127.7,45.6" fill="#1f9d6b"/><text x="138.3663999284248" y="39.28946907692688" font-size="11.5" fill="#1f9d6b" text-anchor="start" font-weight="700">v = 15 m/s</text><path d="M 114 78 A 20 20 0 0 0 109.3 65.1" fill="none" stroke="#5b6478" stroke-width="1.2"/><text x="123.13047124436316" y="71.39737555690427" font-size="10.5" fill="#5b6478" text-anchor="middle" font-weight="400">40&#176;</text><line x1="46" y1="78" x2="46" y2="170" stroke="#5b6478" stroke-width="1.2"/><polygon points="46,170 43.7,164.5 48.3,164.5" fill="#5b6478"/><line x1="46" y1="170" x2="46" y2="78" stroke="#5b6478" stroke-width="1.2"/><polygon points="46,78 48.3,83.5 43.7,83.5" fill="#5b6478"/><text x="40" y="128" font-size="10.5" fill="#5b6478" text-anchor="end" font-weight="400">25 m</text><line x1="94" y1="186" x2="306" y2="186" stroke="#e8842c" stroke-width="1.5"/><polygon points="94,186 100.5,183.6 100.5,188.4" fill="#e8842c"/><polygon points="306,186 299.5,183.6 299.5,188.4" fill="#e8842c"/><text x="200.0" y="182" font-size="11" fill="#e8842c" text-anchor="middle" font-weight="700">range = ?</text><line x1="318" y1="160" x2="340" y2="160" stroke="#8b93a5" stroke-width="1.5"/><polygon points="340,160 334.5,162.3 334.5,157.7" fill="#8b93a5"/><text x="343" y="164" font-size="10" fill="#8b93a5" text-anchor="start" font-weight="400">x</text><line x1="318" y1="160" x2="318" y2="138" stroke="#8b93a5" stroke-width="1.5"/><polygon points="318,138 320.3,143.5 315.7,143.5" fill="#8b93a5"/><text x="315" y="135" font-size="10" fill="#8b93a5" text-anchor="end" font-weight="400">y</text></svg></div>
             <div class="sc"><b>The picture first.</b> A 25&nbsp;m cliff; 15&nbsp;m/s at 40°. It lands <i>below</i> the launch, so there is no up/down symmetry — the vertical column needs a quadratic. Up = +.</div>
           </div>
-          <p><b>Components:</b> <span class="mono">vₓ = 15 cos40 ≈ 11.49</span>, &nbsp;<span class="mono">v_y0 = 15 sin40 ≈ 9.64 m/s</span>.</p>
+          <p><b>Components:</b> <span class="mono">v<sub>x</sub> = 15 cos40 ≈ 11.49</span>, &nbsp;<span class="mono">v<sub>y0</sub> = 15 sin40 ≈ 9.64 m/s</span>.</p>
           <p><b>(a) Time</b> — up = +, lands 25 m <i>below</i> the launch, so <span class="mono">Δy = −25</span>:</p>
-          <p><span class="eqn">Δy = v_y0 t + ½a_y t² → −25 = 9.64 t − 4.9 t²</span></p>
+          <p><span class="eqn">Δy = v<sub>y0</sub> t + ½a<sub>y</sub> t² → −25 = 9.64 t − 4.9 t²</span></p>
           <p>Rearrange to <span class="eqn">4.9 t² − 9.64 t − 25 = 0</span> and use the quadratic formula:</p>
           <p><span class="eqn">t = [9.64 + √(9.64² + 4·4.9·25)] / (2·4.9) = [9.64 + √583] / 9.8</span></p>
           <p><span class="final">t ≈ 3.45 s</span> &nbsp;(take the positive root; the negative one is unphysical).</p>
-          <p><b>(b) Distance</b> — same t into the x-column: <span class="eqn">x = vₓ t = 11.49 × 3.45</span> → <span class="final">x ≈ 39.6 m</span></p>
+          <p><b>(b) Distance</b> — same t into the x-column: <span class="eqn">x = v<sub>x</sub> t = 11.49 × 3.45</span> → <span class="final">x ≈ 39.6 m</span></p>
         </div>
       </details>
       <div class="cap">Load <b>Cliff 1</b> in the lab to see the asymmetric arc clear the cliff edge.</div>
@@ -307,8 +309,8 @@
         </div>
         <div class="readout">
           <div class="stat tt"><div class="t">Time</div><div class="n"><span id="oT">0.00</span> s</div></div>
-          <div class="stat x"><div class="t">vₓ (constant)</div><div class="n"><span id="oVx">11.5</span></div></div>
-          <div class="stat y"><div class="t">v_y (now)</div><div class="n"><span id="oVy">9.6</span></div></div>
+          <div class="stat x"><div class="t"><span class="mono">v<sub>x</sub></span> (constant)</div><div class="n"><span id="oVx">11.5</span></div></div>
+          <div class="stat y"><div class="t"><span class="mono">v<sub>y</sub></span> (now)</div><div class="n"><span id="oVy">9.6</span></div></div>
           <div class="stat"><div class="t">Height</div><div class="n"><span id="oH">25.0</span> m</div></div>
           <div class="stat tt"><div class="t">Flight time</div><div class="n"><span id="oFlight">3.45</span> s</div></div>
           <div class="stat x"><div class="t">Range</div><div class="n"><span id="oRange">39.6</span> m</div></div>
@@ -326,9 +328,9 @@
       <tr><th>The wrong idea</th><th>The fix</th></tr>
       <tr><td>"Horizontal and vertical motion affect each other."</td><td>They're independent — only time is shared.</td></tr>
       <tr><td>"A projectile flies straight until it runs out of push, then drops."</td><td>Gravity acts the whole time; there's never a horizontal force.</td></tr>
-      <tr><td>"At the top of the arc the velocity is zero."</td><td>Only <i>v_y</i> = 0 there; vₓ keeps going unchanged.</td></tr>
+      <tr><td>"At the top of the arc the velocity is zero."</td><td>Only <i>v<sub>y</sub></i> = 0 there; v<sub>x</sub> keeps going unchanged.</td></tr>
       <tr><td>"Heavier objects fall faster."</td><td>The trajectory doesn't depend on mass.</td></tr>
-      <tr><td>"The level-ground time shortcut works even off a cliff."</td><td>No — a height difference breaks the up/down symmetry. Solve the y-column with a quadratic, then x = vₓ t.</td></tr>
+      <tr><td>"The level-ground time shortcut works even off a cliff."</td><td>No — a height difference breaks the up/down symmetry. Solve the y-column with a quadratic, then x = v<sub>x</sub> t.</td></tr>
     </table>
   </div>
 
